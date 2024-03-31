@@ -29,7 +29,9 @@ export const IssueView = () => {
       <IssueComment issue={issueQuery.data} />
 
       {/* Comentario de otros */}
-      {commentsQuery.isLoading && <LoadingIcon />}
+      {
+        commentsQuery.isLoading && (<LoadingIcon/>)
+      }
       {commentsQuery.data?.map((issue) => (
         <IssueComment key={issue.id} issue={issue} />
       ))}
